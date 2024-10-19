@@ -5,7 +5,7 @@ const run = function () {
     // console.dir(chooseModel)
 
     const selectionList = productOrder.querySelectorAll('select')
-     console.log(selectionList);
+    //  console.log(selectionList);
 
     chooseModel.focus()
 
