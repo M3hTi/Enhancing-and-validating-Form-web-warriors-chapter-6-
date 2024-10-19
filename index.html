@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COCTURA - Product Order</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>COCTURA</h1>
+        <p>traditional cooking for the modern age</p>
+    </header>
+    <main>
+        <form id="productOrder">
+            <h2>DigiPot® Multi-Functional Pressure Cooker</h2>
+            <p class="by-line">by Smart Chef</p>
+            <p class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">Customer Rating (1,028 votes)</span>
+            </p>
+            <p class="description">
+                DigiPot is a smart and safe electric pressure cooker, speeding up cooking times while still using up to 70% less energy. The DigiPot multi-use cooker is programmable and can act as a pressure cooker, slow cooker, rice cooker, and steamer. Cook your favorite dishes with the press of a button. A 24-hour timer allows for delayed cooking. Comes in 4-, 6-, and 8-quart models.
+            </p>
+            <table>
+                <tr>
+                    <td>Model</td>
+                    <td>
+                        <select name="model" id="model">
+                            <option value="110.75">4-Quart ($110.75)</option>
+                            <option value="129.95">6-Quart ($129.95)</option>
+                            <option value="149.50">8-Quart ($129.95)</option>
+                        </select>
+                    </td>
+                    <td>Qty</td>
+                    <td>
+                        <select name="quantity" id="quantity">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <input type="text" name="quantity">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <fieldset>
+                            <legend>Protection Plan</legend>
+                            <label><input type="radio" name="plan" value="none" checked> No protection plan ($0.00)</label>
+                            <label><input type="radio" name="plan" value="1year"> 1-year protection plan ($11.95)</label>
+                            <label><input type="radio" name="plan" value="2year"> 2-year protection plan ($15.95)</label>
+                            <label><input type="radio" name="plan" value="3year"> 3-year protection plan ($19.95)</label>
+                        </fieldset>
+                        <input type="text" name="planCost">
+                    </td>
+                </tr>
+                <tr class="subtotal">
+                    <td colspan="3">Subtotal</td>
+                    <td class="price"><input type="text" name="subTotal" readonly></td>
+                </tr>
+                <tr class="tax">
+                    <td colspan="3">Tax (5%)</td>
+                    <td><input type="text" name="salesTax" readonly></td>
+                </tr>
+                <tr class="total">
+                    <td colspan="3">TOTAL</td>
+                    <td><input type="text" name="totalCost" readonly></td>
+                </tr>
+            </table>
+            <button type="submit">add to cart</button>
+        </form>
+    </main>
+</body>
+</html>
