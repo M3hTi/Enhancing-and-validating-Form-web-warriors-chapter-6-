@@ -4,6 +4,9 @@ const run = function () {
     const chooseModel = productOrder.elements.model
     // console.dir(chooseModel)
 
+    const selectionList = productOrder.querySelectorAll('select')
+     console.log(selectionList);
+
     chooseModel.focus()
 
     calcOrder()
@@ -22,10 +25,14 @@ const run = function () {
 
 
         let modelCost = productOrder.elements.modelCost
-        modelCost.value = modelPrice * quantity
+        modelCost.value = (modelPrice * quantity).toFixed(2)
 
 
     }
+
+    selectionList.forEach( select => {
+        select.addEventListener('change', calcOrder)
+    });
     
     
 } 
