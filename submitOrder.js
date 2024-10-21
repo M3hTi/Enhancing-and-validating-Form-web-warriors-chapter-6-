@@ -35,8 +35,10 @@ function validateNumber() {
     const cardNumber = document.querySelector('#cardNumber')
     if(cardNumber.validity.valueMissing){
         cardNumber.setCustomValidity('Enter your card number')
-    } else if(cardNumber.validity.patternMismatch) {
+    }else if(cardNumber.validity.patternMismatch) {
         cardNumber.setCustomValidity('Enter a valid card number')
+    }else if(luhn(cardNumber.value) === false){
+        cardNumber.setCustomValidity('Enter a legitimate card number')
     }else{
         cardNumber.setCustomValidity('')
     }
@@ -96,9 +98,37 @@ function validateCVC() {
         cvc.setCustomValidity("");
     }
 
-
-
 }
+
+
+// NOTE: add luhn algoirthm
+function luhn(creditCardNumber) {
+    // Remove any non-digit characters from the credit card number
+    const digits = creditCardNumber.replace(/\D/g, '');
+    
+    let sum = 0;
+    let isEven = false;
+    
+    // Iterate through the digits from right to left
+    for (let i = digits.length - 1; i >= 0; i--) {
+      let digit = parseInt(digits[i], 10);
+      
+      if (isEven) {
+        digit *= 2;
+        if (digit > 9) {
+          digit -= 9;
+        }
+      }
+      
+      sum += digit;
+      isEven = !isEven;
+    }
+    
+    // Check if the sum is a multiple of 10
+    return sum % 10 === 0;
+}
+
+
 
 subBtn.addEventListener('click', validateName)
 subBtn.addEventListener('click', validateCredit)
