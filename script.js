@@ -19,7 +19,6 @@ const initializeProductOrderForm = function () {
         // console.log(modelIndex);
         const modelPrice = parseFloat(chooseModel.options[modelIndex].value)
         
-        
 
         const quantitySelection = productOrder.elements.quantity
         // console.log(quantity);
@@ -33,13 +32,13 @@ const initializeProductOrderForm = function () {
 
 
         //NOTE: retrieve the cost of the protection plan
-        const plan = parseFloat(document.querySelector('input[name = "plan"]:checked').value) 
+        const planValue = parseFloat(document.querySelector('input[name = "plan"]:checked').value)
         
         // NOTE: charge the plan to each item ordered
         const planCost = productOrder.elements.planCost
         // console.log(planCost);
 
-        const planTotal = plan * quantity;
+        const planTotal = planValue * quantity;
         planCost.value = planTotal.toLocaleString(undefined, {style: 'currency', currency: 'USD'});
 
 

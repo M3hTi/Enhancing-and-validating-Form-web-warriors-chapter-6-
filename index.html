@@ -12,7 +12,7 @@
         <p>traditional cooking for the modern age</p>
     </header>
     <main>
-        <form id="productOrder">
+        <form id="productOrder" action="./ordersubmit.html" method="get">
             <h2>DigiPot® Multi-Functional Pressure Cooker</h2>
             <p class="by-line">by Smart Chef</p>
             <p class="rating">
@@ -29,7 +29,7 @@
                         <select name="model" id="model">
                             <option value="110.75">4-Quart ($110.75)</option>
                             <option value="129.95">6-Quart ($129.95)</option>
-                            <option value="149.50">8-Quart ($149.50)</option>
+                            <option value="159.95">8-Quart ($159.95)</option>
                         </select>
                     </td>
                     <td>Qty</td>
@@ -44,7 +44,7 @@
                             <option value="7">7</option>
                             <option value="8">8</option>
                         </select>
-                        <input type="text" name="modelCost">
+                        <input type="text" name="modelCost" readonly>
                     </td>
                 </tr>
                 <tr>
@@ -68,7 +68,7 @@
                                 3-year protection plan ($19.95)
                             </label>
                         </fieldset>
-                        <input type="text" name="planCost">
+                        <input type="text" name="planCost" readonly>
                     </td>
                 </tr>
                 <tr class="subtotal">
