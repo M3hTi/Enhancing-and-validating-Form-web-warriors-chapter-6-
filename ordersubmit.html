@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COCTURA Payment Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>COCTURA</h1>
+        <p>traditional cooking for the modern age</p>
+    </header>
+    <main>
+        <div class="container">
+            <section class="order-summary">
+                <h2>Your Order</h2>
+                <table>
+                    <tr>
+                        <td>8-Quart ($159.95)</td>
+                        <td>Qty: 6</td>
+                        <td>$959.70</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">1-year protection plan ($11.95)</td>
+                        <td>$71.70</td>
+                    </tr>
+                    <tr class="subtotal">
+                        <td colspan="2">Subtotal</td>
+                        <td>$1,031.40</td>
+                    </tr>
+                    <tr class="tax">
+                        <td colspan="2">Tax (5%)</td>
+                        <td>$51.57</td>
+                    </tr>
+                    <tr class="total">
+                        <td colspan="2">TOTAL</td>
+                        <td>$1,082.97</td>
+                    </tr>
+                </table>
+            </section>
+            <section class="payment-form">
+                <h2>Payment Form</h2>
+                <form name="payment">
+                    <div class="form-group">
+                        <label for="cardName">Name*</label>
+                        <input type="text" id="cardName" name="cardName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Credit Card*</label>
+                        <div class="credit-options">
+                            <label><input type="radio" name="creditCard" value="amex" required> American Express</label>
+                            <label><input type="radio" name="creditCard" value="discover"> Discover</label>
+                            <label><input type="radio" name="creditCard" value="mastercard"> MasterCard</label>
+                            <label><input type="radio" name="creditCard" value="visa"> Visa</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardNumber">Credit Card Number*</label>
+                        <input type="text" id="cardNumber" name="cardNumber" pattern = "^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47]
+                        [0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"
+                        required>
+                    </div>
+                    <div class="form-group">
+                        <label>Expiration Date*</label>
+                        <select name="expMonth" id="js-month" required>
+                            <option value="">mm</option>
+                            <option value="">January</option>
+                            <option value="">February</option>
+                            <option value="">March</option>
+                            <option value="">April</option>
+                            <option value="">May</option>
+                            <option value="">June</option>
+                            <option value="">July</option>
+                            <option value="">August</option>
+                            <option value="">September</option>
+                            <option value="">October</option>
+                            <option value="">November</option>
+                            <option value="">December</option>
+                        </select>
+                        <select name="expYear" id="js-year" required>
+                            <option value="">yy</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvc">CVC*</label>
+                        <input type="text" id="cvc" name="cvc" required>
+                    </div>
+                    <p class="required-note">* - Required Item</p>
+                    <button type="submit" id="js-submit">Submit Payment</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    <script src="submitOrder.js"></script>
+</body>
+</html>
