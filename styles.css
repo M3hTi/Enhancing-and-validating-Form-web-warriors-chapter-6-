@@ -34,7 +34,9 @@ main {
 
 h2 {
     color: #5c4b3e;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e8ded1;
+    padding-bottom: 10px;
 }
 
 .by-line {
@@ -123,4 +125,65 @@ button {
 
 button:hover {
     background-color: #a88f6f;
+}
+
+/* Styles for orderSubmit.html */
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.order-summary, .payment-form {
+    width: 48%;
+}
+
+@media (max-width: 768px) {
+    .order-summary, .payment-form {
+        width: 100%;
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.credit-options {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.credit-options label {
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+
+.required-note {
+    font-size: 0.9em;
+    color: #8c7b6e;
+    margin-top: 10px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e8ded1;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select {
+    margin-right: 10px;
+}
+
+.expiration-date select {
+    width: calc(50% - 5px);
+    display: inline-block;
+}
+
+#cvc {
+    width: 70px;
+}
+input:invalid {
+    background-color: rgba(221,147,148,0.2);
 }
