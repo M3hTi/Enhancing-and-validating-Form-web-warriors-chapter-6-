@@ -1,3 +1,7 @@
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October' , 'November' , 'December']
+
+
+
 const subBtn = document.querySelector('#js-submit')
 
 
@@ -154,4 +158,15 @@ window.addEventListener('load', function(){
         option.textContent = year + i
         yearSelectElement.appendChild(option)
     }
+})
+
+// for create dynamically list options month 
+window.addEventListener('load', function(){
+    const monthList = document.querySelector('#js-month')
+     for (let index = 0; index < 12; index++) {
+        const option = document.createElement('option')
+        option.value = index + 1
+        option.textContent = months[index]
+        monthList.appendChild(option)
+     }
 })
